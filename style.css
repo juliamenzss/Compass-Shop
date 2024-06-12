@@ -222,16 +222,17 @@ h1 {
   box-shadow: 0px 3px 3px 5px #F9F1E7;
 }
 
-.preFooter img {
+.preFooterItem {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+}
+.preFooterItem img {
+margin-right: 10px;
   }
+
   .preFooter p {
-    display: flex;
+   margin: 0;
     }
-    /* width: 20px;
-    height: 20px;
-    margin-right: .8rem; */
 
 .contentFooter {
   background-color: #ffffff;
