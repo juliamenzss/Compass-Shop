@@ -353,7 +353,7 @@ body {
 
 .newBadge {
   position: absolute;
-  top: 40px; /* Ajuste conforme necessário */
+  top: 40px; 
   right: 50px; 
   width: 40px;
   height: 40px;
@@ -369,17 +369,23 @@ body {
   justify-content: center;
 }
 
-/* .notNewBadge {
+.discountBadge {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 40px; 
+  right: 50px; 
+  width: 40px;
+  height: 40px;
   color: white;
-  padding: 5px 10px;
+  padding: 10px 5px;
   font-size: 12px;
   font-weight: bold;
-  border-radius: 5px;
+  border-radius: 50px;
   z-index: 10;
-} */
+  background-color: #E97171;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 
 
@@ -417,10 +423,23 @@ body {
   ;
 }
 
+.productPriceContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre os preços */
+}
+
 .productPrice {
   font-size: 16px;
   font-weight: bold;
   color: #000;
+}
+
+.originalPrice {
+  font-size: 16px;
+  font-weight: bold;
+  color: #a415cf;
+  text-decoration: line-through;
 }
 
 
@@ -720,4 +739,9 @@ ul li.active {
 
 .button.hidden {
   display: none;
+}
+
+.newsletterEmail input{ 
+  background-color: #a415cf;
+
 }

@@ -28,9 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (show > 0) {
       createMessageResult()
-    } else {
-      resultsPage.innerHTML = 'Adcione um numero'
-    }
+    } 
+    
  
     document.getElementById('productCount').addEventListener('input', function(e) {
       var value = parseInt(e.target.value);
@@ -65,9 +64,42 @@ document.addEventListener('DOMContentLoaded', () => {
       productDescription.classList.add('productDescription');
       productDescription.innerHTML = db.description;
 
+
+
+
+
+       // Discount
       const productPrice = document.createElement('div');
       productPrice.classList.add('productPrice');
-      productPrice.innerHTML = db.price;
+      const originalPrice = parseFloat(db.price.replace(/[^\d,]/g, '').replace(',', '.'));
+      const discountPrice = db.discount ? originalPrice * (1 - parseFloat(db.percentageDiscount) / 100) : originalPrice;
+      productPrice.innerHTML = `Rp ${discountPrice.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+      const originalPriceElement = document.createElement('div');
+      originalPriceElement.classList.add('originalPrice');
+      if (db.discount) {
+        originalPriceElement.innerHTML = `Rp ${originalPrice.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+        originalPriceElement.style.textDecoration = 'line-through';
+      }
+
+
+
+  
+
+      // TAG DISCOUNT
+      const newDiscount = document.createElement('div')
+      if (db.discount === true || db.percentageDiscount === "30") {
+        newDiscount.classList.add('discountBadge');
+        newDiscount.innerHTML = `${db.percentageDiscount}%`
+      } else {
+        newDiscount.classList.remove('newDiscount')
+      }
+      
+
+
+
+
+
 
       const button = document.createElement('div');
       button.classList.add('button', 'hidden');
@@ -107,11 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
       productInfo.appendChild(productName);
       productInfo.appendChild(productDescription);
       productInfo.appendChild(productPrice);
+     
 
   
-
-
-
       const newBadge = document.createElement('div');
       if (db.productNew === true) {
         newBadge.classList.add('newBadge');
@@ -119,13 +149,27 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         newBadge.classList.remove('newBadge');
       }
+
+
+
+
+
+
+
       productCard.appendChild(newBadge);
+      productCard.appendChild(newDiscount);
 
       productCard.appendChild(productInfo);
       productCard.appendChild(button);
 
       products.appendChild(productCard);
     });
+
+
+
+
+
+
 
     addHoverEffect();
     updatePagination();
@@ -214,4 +258,31 @@ document.addEventListener('DOMContentLoaded', () => {
       sendHtml();
     }
   });
-});
+
+    document.getElementById('email').addEventListener('input', function(e) {
+      const email = e.target.value;
+      // const result = document.getElementById('result');
+  
+      if (isValidEmail(email)) {
+        alert('Email succeffully registered');
+        e.target.value = ''
+      } else {
+        alert('Invalid email!');
+        e.target.value = ''
+      }
+    });
+  
+    function isValidEmail(email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  });
+  
+  
+//   <div class="newsletterEmail">
+//   <h4>Newsletter</h4>
+//   <label for="email">Email:</label>
+//   <input type="text" id="email" name="email">
+//   <button type="submit">Submit</button>
+//   <p id="result"></p>
+// </div>

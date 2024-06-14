@@ -5,7 +5,8 @@
     "name": "Syltherine",
     "description": "Stylish cafe chair",
     "price": "Rp R$ 2.500,000",
-    "discount": "-30%",
+    "discount": true,
+    "percentageDiscount": "30",
     "productNew": false
   },
   {
@@ -13,7 +14,7 @@
     "img": "./assets/img/product2.png",
     "name": "Leviosa",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.5,000",
+    "price": "Rp R$ 2.500",
     "productNew": false
   },
   {
@@ -22,7 +23,7 @@
     "name": "Lolito",
     "description": "Luxury big sofa",
     "price": "Rp 7.000.000",
-    "discount": "-50%",
+    "discount": false,
     "productNew": false
 
   },
