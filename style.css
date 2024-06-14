@@ -712,6 +712,7 @@ ul li.active {
   color: #ffffff;
   text-decoration: none;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .details ul {

@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendHtml = () => {
     products.innerHTML = '';
 
+
+    // MESSAGE SHOWING 1-16 PRODUCTS
     function createMessageResult() {
       if (!bancodedados || !Array.isArray(bancodedados) || bancodedados.length === 0) {
         resultsPage.innerHTML = 'Valor inválido';
@@ -19,6 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
         resultsPage.innerHTML = 'Valor inválido';
         return;
       }
+
+      
 
       let start = (currentPage - 1) * show + 1;
       let end = Math.min(currentPage * show, bancodedados.length);
@@ -95,7 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
         newDiscount.classList.remove('newDiscount')
       }
       
-
+      // TAG NEW PRODUCT
+      const newBadge = document.createElement('div');
+      if (db.productNew === true) {
+        newBadge.classList.add('newBadge');
+        newBadge.innerHTML = 'New';
+      } else {
+        newBadge.classList.remove('newBadge');
+      }
 
 
 
@@ -126,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const bg = document.createElement('div');
       bg.classList.add('bg');
 
+
+      
       ul.appendChild(createListItem('./assets/icons/share.png', 'Share'));
       ul.appendChild(createListItem('./assets/icons/compare.png', 'Compare'));
       ul.appendChild(createListItem('./assets/icons/like.png', 'Like'));
@@ -139,70 +152,49 @@ document.addEventListener('DOMContentLoaded', () => {
       productInfo.appendChild(productName);
       productInfo.appendChild(productDescription);
       productInfo.appendChild(productPrice);
-     
-
-  
-      const newBadge = document.createElement('div');
-      if (db.productNew === true) {
-        newBadge.classList.add('newBadge');
-        newBadge.innerHTML = 'New';
-      } else {
-        newBadge.classList.remove('newBadge');
-      }
-
-
-
-
-
-
-
+      
       productCard.appendChild(newBadge);
       productCard.appendChild(newDiscount);
-
+      
       productCard.appendChild(productInfo);
       productCard.appendChild(button);
-
+      
       products.appendChild(productCard);
-    });
-
-
-
-
-
-
-
-    addHoverEffect();
-    updatePagination();
-  };
-
-
-
-
-  const updatePagination = () => {
-    const paginationList = document.getElementById('paginationList');
-    paginationList.innerHTML = '';
-
-    const totalPages = Math.ceil(bancodedados.length / show);
-
-    for (let i = 1; i <= totalPages; i++) {
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
-      li.addEventListener('click', () => {
-        currentPage = i;
-        sendHtml();
       });
-      paginationList.appendChild(li);
-    }
-
-    const nextPageButton = document.getElementById('nextPage');
-    nextPageButton.addEventListener('click', () => {
-      if (currentPage < totalPages) {
-        currentPage++;
+      
+      addHoverEffect();
+      updatePagination();
+      };
+      
+      
+      
+      // PAGINATION
+      const updatePagination = () => {
+        const paginationList = document.getElementById('paginationList');
+        paginationList.innerHTML = '';
+        
+        const totalPages = Math.ceil(bancodedados.length / show);
+        
+        for (let i = 1; i <= totalPages; i++) {
+          const li = document.createElement('li');
+          li.innerHTML = `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
+          li.addEventListener('click', () => {
+            currentPage = i;
+            sendHtml();
+            });
+            paginationList.appendChild(li);
+            }
+            
+            const nextPageButton = document.getElementById('nextPage');
+            nextPageButton.addEventListener('click', () => {
+              if (currentPage < totalPages) {
+                currentPage++;
         sendHtml();
       }
     });
   };
 
+  // HOVER EFFECT
   const addHoverEffect = () => {
     const productCards = document.querySelectorAll('.productCard');
     productCards.forEach((productCard) => {
@@ -221,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   
-  // Menu
+  // MENU HAMBURGUER
   const sidebar = document.querySelector('.sidebar');
   const toggleButton = document.getElementById('toggleSidebar');
   
@@ -259,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  // EMAIL VALIDATION
     document.getElementById('email').addEventListener('input', function(e) {
       const email = e.target.value;
       // const result = document.getElementById('result');
@@ -279,10 +272,3 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   
   
-//   <div class="newsletterEmail">
-//   <h4>Newsletter</h4>
-//   <label for="email">Email:</label>
-//   <input type="text" id="email" name="email">
-//   <button type="submit">Submit</button>
-//   <p id="result"></p>
-// </div>
