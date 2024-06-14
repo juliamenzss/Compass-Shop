@@ -8,13 +8,57 @@
   <title>Compass</title>
 </head>
 <body>
-  <div class="nav">
- 
-  <div class="logo">
-    <img src="./assets/img/logo.png" alt="">
-    <h1>Compass</h1>
+  <nav>
+  <div class="sidebar">
+
+
+  <div>
+    <ul>
+      <li class="closeMenu"><img src="assets/icons/closemenu.png" style="height: 22px; margin-right: 50px; cursor: pointer; padding-bottom: 5px;" alt=""></li>
+      <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a href="/shop"><p>Shop</p></a>
+      </li>
+      <li>
+        <a href="/about"><p>About</p></a>
+      </li>
+      <li>
+        <a href="/contact"><p>Contact</p></a>
+      </li>
+    </ul>
   </div>
 
+
+  <div class="sidebarIcons">
+    <ul>
+      <li>
+        <a href="#"><img src="assets/icons/profile.png" alt="profile icon"><p>Profile</p></a>
+        
+      </li>
+      <li>
+        <a href="#"><img src="assets/icons/search.png" alt="search icon"><p>Search</p></a>
+        
+      </li>
+      <li>
+        <a href="#"><img src="assets/icons/favorite.png" alt="favorite icon"><p>Favorites</p></a>
+        
+      </li>
+      <li>
+        <a href="#"><img src="assets/icons/cart.png" alt="shopping cart icon">Shop card</a>
+        
+      </li>
+</ul>
+</div>
+  
+  </div>
+ <div class="nav">
+  <div class="logo">
+    <img src="./assets/img/logo.png" alt="">
+    <a href="#"><h1>Compass</h1></a>
+  </div>
+  <div id="toggleSidebar"><img src="assets/icons/menu.png" style="height: 25px; margin-right: 10px; cursor: pointer;" alt=""></div>
   <div class= "navbar">
     <ul>
       <li>
@@ -29,8 +73,8 @@
       <li>
         <a href="/contact">Contact</a>
       </li>
-    </ul>
-  </div>
+      </div>
+
 
   <div class="navIcons">
     <ul>
@@ -49,7 +93,8 @@
 
     </ul>
   </div>
-  </div>
+
+  </nav> 
 
   <div class="header">
     <img class="headerImg" src="./assets/img/header.png" alt="">
@@ -64,19 +109,24 @@
       <img src="./assets/icons/filter.png" alt="filter icon">
       <p>Filter</p>
     </div>
-    <p class=results></p>
+    <div>
+      <label>Show</label>
+      <input type="number" id="productCount" value="16">
+  </div>
   </div>
 
 
 <main>
-    <div class="products">
-      <div class="productCard" >
+    <div class="products" id="products">
+
+      <!-- <div class="productCard" >
         <img class="productImg" src="./assets/img/product1.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Syltherine</div>
-         <div class="product-description">Stylish cafe chair</div> 
-         <div class="product-price"> Rp R$ 2.500,000</div>
+        <div class="productInfo"> 
+          <div class="productName">Syltherine</div>
+         <div class="productDescription">Stylish cafe chair</div> 
+         <div class="productPrice"> Rp R$ 2.500,000</div>
         </div>
+
         <div class="button hidden">        
           <button>See Details</button>
           <div class="details">
@@ -98,20 +148,17 @@
       </div>
           <div class="bg"></div>
         </div>
-      </div>
+      </div> -->
 
-
-
-
-
-
-      <div class="productCard" >
+      <!-- <div class="productCard" >
         <img class="productImg" src="./assets/img/product2.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Leviosa</div>
-         <div class="product-description">Stylish cafe chair</div> 
-         <div class="product-price"> Rp R$ 2.500,000</div>
-        </div>     <div class="button hidden">        
+        <div class="productInfo"> 
+          <div class="productName">Leviosa</div>
+         <div class="productDescription">Stylish cafe chair</div> 
+         <div class="productPrice"> Rp R$ 2.500,000</div>
+        </div>     
+        
+        <div class="button hidden">        
           <button>See Details</button>
           <div class="details">
             <ul>  
@@ -134,14 +181,14 @@
         </div>
         
 
-      </div>
-
+      </div> -->
+<!-- 
       <div class="productCard" >
         <img class="productImg" src="./assets/img/product3.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Lolito</div>
-         <div class="product-description">Luxury big sofa</div> 
-         <div class="product-price"> Rp 7.000.000</div>
+        <div class="productInfo"> 
+          <div class="productName">Lolito</div>
+         <div class="productDescription">Luxury big sofa</div> 
+         <div class="productPrice"> Rp 7.000.000</div>
         </div>    <div class="button hidden">        
           <button>See Details</button>
           <div class="details">
@@ -170,6 +217,246 @@
 
       <div class="productCard" >
         <img class="productImg" src="./assets/img/product4.png" alt="">
+        <div class="productInfo"> 
+          <div class="productName">Respira</div>
+         <div class="productDescription">Outdoor bar table and stool</div> 
+         <div class="productPrice"> Rp 500.000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product1.png" alt="">
+        <div class="productInfo"> 
+          <div class="productName">Syltherine</div>
+         <div class="productDescription">Stylish cafe chair</div> 
+         <div class="productPrice"> Rp R$ 2.500,000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product2.png" alt="">
+        <div class="productInfo"> 
+          <div class="productName">Leviosa</div>
+         <div class="productDescription">Stylish cafe chair</div> 
+         <div class="productPrice"> Rp R$ 2.500,000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product3.png" alt="">
+        <div class="productInfo"> 
+          <div class="productName">Lolito</div>
+         <div class="productDescription">Luxury big sofa</div> 
+         <div class="productPrice"> Rp 7.000.000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product4.png" alt="">
+        <div class="productInfo"> 
+          <div class="productName">Respira</div>
+         <div class="productDescription">Outdoor bar table and stool</div> 
+         <div class="productPrice"> Rp 500.000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product1.png" alt="">
+        <div class="product-info"> 
+          <div class="product-name">Syltherine</div>
+         <div class="product-description">Stylish cafe chair</div> 
+         <div class="product-price"> Rp R$ 2.500,000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product2.png" alt="">
+        <div class="product-info"> 
+          <div class="product-name">Leviosa</div>
+         <div class="product-description">Stylish cafe chair</div> 
+         <div class="product-price"> Rp R$ 2.500,000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product3.png" alt="">
+        <div class="product-info"> 
+          <div class="product-name">Lolito</div>
+         <div class="product-description">Luxury big sofa</div> 
+         <div class="product-price"> Rp 7.000.000</div>
+        </div>
+        <div class="button hidden">        
+          <button>See Details</button>
+          <div class="details">
+            <ul>  
+              <li>
+            <img src="assets/icons/share.png" alt="Share this product">
+            <a href="#">Share</a>
+          </li>
+          <li>
+            <img src="assets/icons/compare.png" alt="Compare this product">
+            <a href="#">Compare</a>
+          </li>
+          <li>
+            <img src="assets/icons/like.png" alt="Favorite this product">
+            <a href="#">Like</a>
+          </li>
+    
+        </ul>
+      </div>
+          <div class="bg"></div>
+        </div>
+      </div>
+
+      <div class="productCard" >
+        <img class="productImg" src="./assets/img/product4.png" alt="">
         <div class="product-info"> 
           <div class="product-name">Respira</div>
          <div class="product-description">Outdoor bar table and stool</div> 
@@ -316,292 +603,51 @@
       </div>
           <div class="bg"></div>
         </div>
-      </div>
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product1.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Syltherine</div>
-         <div class="product-description">Stylish cafe chair</div> 
-         <div class="product-price"> Rp R$ 2.500,000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
+      </div> -->
 
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product2.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Leviosa</div>
-         <div class="product-description">Stylish cafe chair</div> 
-         <div class="product-price"> Rp R$ 2.500,000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product3.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Lolito</div>
-         <div class="product-description">Luxury big sofa</div> 
-         <div class="product-price"> Rp 7.000.000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product4.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Respira</div>
-         <div class="product-description">Outdoor bar table and stool</div> 
-         <div class="product-price"> Rp 500.000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product1.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Syltherine</div>
-         <div class="product-description">Stylish cafe chair</div> 
-         <div class="product-price"> Rp R$ 2.500,000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product2.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Leviosa</div>
-         <div class="product-description">Stylish cafe chair</div> 
-         <div class="product-price"> Rp R$ 2.500,000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product3.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Lolito</div>
-         <div class="product-description">Luxury big sofa</div> 
-         <div class="product-price"> Rp 7.000.000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-      <div class="productCard" >
-        <img class="productImg" src="./assets/img/product4.png" alt="">
-        <div class="product-info"> 
-          <div class="product-name">Respira</div>
-         <div class="product-description">Outdoor bar table and stool</div> 
-         <div class="product-price"> Rp 500.000</div>
-        </div>
-        <div class="button hidden">        
-          <button>See Details</button>
-          <div class="details">
-            <ul>  
-              <li>
-            <img src="assets/icons/share.png" alt="Share this product">
-            <a href="#">Share</a>
-          </li>
-          <li>
-            <img src="assets/icons/compare.png" alt="Compare this product">
-            <a href="#">Compare</a>
-          </li>
-          <li>
-            <img src="assets/icons/like.png" alt="Favorite this product">
-            <a href="#">Like</a>
-          </li>
-    
-        </ul>
-      </div>
-          <div class="bg"></div>
-        </div>
-      </div>
-
-<section>
-<div class="containerPag">
-<div class="pagination">
-  <ul id="paginationList">
-  <li class="active"><a href="index.html">1</a></li>
-  <li><a href="page2.html">2</a></li>
-    <li><a href="page3.html">3</a></li>
-</ul>
-<button class="btn1" id="nextButton">next</button>
-</div>
-</div>
-</section>
-
-<section>
-  <div class="serviceSection">
-    <div class="service">
-      <img src="./assets/icons/trophy.png" alt="">
-      <div class="serviceText">
-        <h2>High Quality</h2>
-        <p>Crafted from top materials</p>
-      </div>
-    </div>
-  
-      <div class="service"><img src="./assets/icons/checking.png" alt="">
-        <div class="serviceText">
-        <h2>Warranty Protection</h2>
-        <p>Over 2 years</p></div>
-      </div>
-
-      <div class="service"><img src="./assets/icons/shipping.png" alt="">
-        <div class="serviceText">
-        <h2>Free Shopping</h2>
-        <p>Order over 150 $</p></div>
-      </div>
-  
-      <div class="service"><img src="./assets/icons/support.png" alt="">
-        <div class="serviceText">
-        <h2>24 / 7 Support</h2>
-        <p>Dedicated Support</p></div>
-      </div>
-      </div>
-
-</section>
+      
 
 </main>
+<section>
+  <div id="paginationContainer">
+    <div class="pagination">
+      <ul id="paginationList">
+    </ul>
+    <button class="btn1" id="nextPage">next</button>
+    </div>
+    </div>
+</section>
+
+<section>
+<div class="serviceSection">
+<div class="service">
+<img src="./assets/icons/trophy.png" alt="">
+<div class="serviceText">
+  <h2>High Quality</h2>
+  <p>Crafted from top materials</p>
+</div>
+</div>
+
+<div class="service"><img src="./assets/icons/checking.png" alt="">
+  <div class="serviceText">
+  <h2>Warranty Protection</h2>
+  <p>Over 2 years</p></div>
+</div>
+
+<div class="service"><img src="./assets/icons/shipping.png" alt="">
+  <div class="serviceText">
+  <h2>Free Shopping</h2>
+  <p>Order over 150 $</p></div>
+</div>
+
+<div class="service"><img src="./assets/icons/support.png" alt="">
+  <div class="serviceText">
+  <h2>24 / 7 Support</h2>
+  <p>Dedicated Support</p></div>
+</div>
+</div>
+
+</section>
   <footer class="footer">
     <div class="contentFooter">
     <div class="address"><h3>footer.</h3> <p>Rua Alexandre Dumas, 1711 - 6º andar - Chácara Santo Antônio, São Paulo - SP, 04717-004</p></div>
@@ -610,16 +656,16 @@
       <h4>Links</h4>
       <ul>
       <li>
-        <a>Home</a>
+        <a href="index.html">Home</a>
       </li>
       <li>
-        <a href="/shop">Shop</a>
+        <a href="#">Shop</a>
       </li>
       <li>
-        <a href="/about">About</a>
+        <a href="#">About</a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="#">Contact</a>
       </li>
     </ul></div>
 
@@ -627,16 +673,16 @@
       <h4>Help</h4>
       <ul>
       <li>
-        <a href="/payment">Payment Options</a>
+        <a href="#">Payment Options</a>
       </li>
       <li>
-        <a href="/returns">Returns</a>
+        <a href="#">Returns</a>
       </li>
       <li>
-        <a href="/privacy=policies">Privacy Policies</a>
+        <a href="#">Privacy Policies</a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="#">Contact</a>
       </li>
     </ul></div>
   <div class="newsletter"><h4>Newsletter</h4></div>
@@ -644,6 +690,6 @@
   <div class="copyright"><p>2024 Compass Uol</p></div>
   </footer>
 
-  <script src="index.js"></script>
+  <script type="module" src="index.js"></script>
 </body>
 </html>
