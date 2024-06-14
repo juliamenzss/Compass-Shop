@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const products = document.querySelector('.products');
-
+  const resultsPage = document.querySelector('.resultsPage');
   let show = 16;
   let currentPage = 1;
   let bancodedados;
@@ -8,8 +8,40 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendHtml = () => {
     products.innerHTML = '';
 
+    function createMessageResult() {
+      if (!bancodedados || !Array.isArray(bancodedados) || bancodedados.length === 0) {
+        resultsPage.innerHTML = 'Valor inválido';
+        return;
+      }
+
+      const totalPages = Math.ceil(bancodedados.length / show);
+      if (currentPage < 1 || currentPage > totalPages || show > bancodedados.length) {
+        resultsPage.innerHTML = 'Valor inválido';
+        return;
+      }
+
+      let start = (currentPage - 1) * show + 1;
+      let end = Math.min(currentPage * show, bancodedados.length);
+      let message = `Showing ${start}-${end} of ${bancodedados.length} results`;
+      resultsPage.innerHTML = message;
+    }
+
+    if (show > 0) {
+      createMessageResult()
+    } else {
+      resultsPage.innerHTML = 'Adcione um numero'
+    }
+ 
+    document.getElementById('productCount').addEventListener('input', function(e) {
+      var value = parseInt(e.target.value);
+      if (value < 1) {
+          e.target.value = show
+      }
+  });
+
+
     const start = (currentPage - 1) * show;
-    const end = currentPage * show;
+    const end = Math.min(currentPage * show, bancodedados.length);
 
     bancodedados.slice(start, end).forEach((db) => {
       const productCard = document.createElement('div');
@@ -58,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         li.appendChild(aButton);
         return li;
       };
+
       const bg = document.createElement('div');
       bg.classList.add('bg');
 
@@ -75,6 +108,19 @@ document.addEventListener('DOMContentLoaded', () => {
       productInfo.appendChild(productDescription);
       productInfo.appendChild(productPrice);
 
+  
+
+
+
+      const newBadge = document.createElement('div');
+      if (db.productNew === true) {
+        newBadge.classList.add('newBadge');
+        newBadge.innerHTML = 'New';
+      } else {
+        newBadge.classList.remove('newBadge');
+      }
+      productCard.appendChild(newBadge);
+
       productCard.appendChild(productInfo);
       productCard.appendChild(button);
 
@@ -83,8 +129,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     addHoverEffect();
     updatePagination();
-
   };
+
+
+
 
   const updatePagination = () => {
     const paginationList = document.getElementById('paginationList');
@@ -94,9 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 1; i <= totalPages; i++) {
       const li = document.createElement('li');
-      li.innerHTML = `<a href="#" class="${
-        i === currentPage ? 'active' : ''
-      }">${i}</a>`;
+      li.innerHTML = `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
       li.addEventListener('click', () => {
         currentPage = i;
         sendHtml();
@@ -130,23 +176,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  fetch('./db/db.json')
-    .then((response) => response.json())
-    .then((db) => {
-      bancodedados = db;
-      sendHtml();
-    })
-    .catch((error) => console.error('Erro ao carregar o JSON:', error));
-
+  
   // Menu
   const sidebar = document.querySelector('.sidebar');
   const toggleButton = document.getElementById('toggleSidebar');
-
+  
   const showSidebar = () => {
     if (sidebar) {
       sidebar.classList.add('visible');
-    }
-  };
+      }
+      };
+      fetch('./db/db.json')
+        .then((response) => response.json())
+        .then((db) => {
+          bancodedados = db;
+          sendHtml();
+        })
+        .catch((error) => console.error('Erro ao carregar o JSON:', error));
 
   const closeMenu = document.querySelector('.closeMenu');
   if (closeMenu) {
@@ -161,11 +207,8 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButton.addEventListener('click', showSidebar);
   }
 
-
   const productCount = document.querySelector('#productCount');
   productCount.addEventListener('keydown', function (event) {
-    
-    console.log('re');
     if (event.key === 'Enter') {
       show = parseInt(productCount.value, 10);
       sendHtml();

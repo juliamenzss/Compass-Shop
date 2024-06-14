@@ -324,6 +324,12 @@ body {
   padding: 5px
 }
 
+
+
+
+
+
+
 #products .productCard {
   display: none;
 }
@@ -337,11 +343,46 @@ body {
 }
 
 .productCard {
+  position: relative;
   border-radius: 1px;
   overflow: hidden;
   width: 300px;
   padding: 20px;
 }
+
+
+.newBadge {
+  position: absolute;
+  top: 40px; /* Ajuste conforme necessário */
+  right: 50px; 
+  width: 40px;
+  height: 40px;
+  color: white;
+  padding: 10px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 50px;
+  z-index: 10;
+  background-color: #2EC1AC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .notNewBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: white;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 10;
+} */
+
+
+
 
 .productImg {
   display: block;
@@ -381,6 +422,7 @@ body {
   font-weight: bold;
   color: #000;
 }
+
 
 #paginationContainer {
   display: flex;
