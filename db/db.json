@@ -4,7 +4,8 @@
     "img": "./assets/img/product1.png",
     "name": "Syltherine",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.500,000",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
     "discount": true,
     "percentageDiscount": "30",
     "productNew": false
@@ -14,7 +15,10 @@
     "img": "./assets/img/product2.png",
     "name": "Leviosa",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.500",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
     "productNew": false
   },
   {
@@ -22,7 +26,7 @@
     "img": "./assets/img/product3.png",
     "name": "Lolito",
     "description": "Luxury big sofa",
-    "price": "Rp 7.000.000",
+    "priceLast": "7.000",
     "discount": false,
     "productNew": false
 
@@ -32,7 +36,8 @@
     "img": "./assets/img/product4.png",
     "name": "Respira",
     "description": "Outdoor bar table and stool",
-    "price": "Rp 500.000",
+    "priceLast": "5.000",
+    "discount": false,
     "productNew": true
   },
   {
@@ -40,8 +45,10 @@
     "img": "./assets/img/product1.png",
     "name": "Syltherine",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.500,000",
-    "discount": "-30%",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
     "productNew": false
   },
   {
@@ -49,7 +56,10 @@
     "img": "./assets/img/product2.png",
     "name": "Leviosa",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.5,000",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
     "productNew": false
   },
   {
@@ -57,8 +67,8 @@
     "img": "./assets/img/product3.png",
     "name": "Lolito",
     "description": "Luxury big sofa",
-    "price": "Rp 7.000.000",
-    "discount": "-50%",
+    "priceLast": "7.000",
+    "discount": false,
     "productNew": false
 
   },
@@ -67,7 +77,8 @@
     "img": "./assets/img/product4.png",
     "name": "Respira",
     "description": "Outdoor bar table and stool",
-    "price": "Rp 500.000",
+    "priceLast": "5.000",
+    "discount": false,
     "productNew": true
   },
   {
@@ -75,8 +86,10 @@
     "img": "./assets/img/product1.png",
     "name": "Syltherine",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.500,000",
-    "discount": "-30%",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
     "productNew": false
   },
   {
@@ -84,7 +97,10 @@
     "img": "./assets/img/product2.png",
     "name": "Leviosa",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.5,000",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
     "productNew": false
   },
   {
@@ -92,8 +108,8 @@
     "img": "./assets/img/product3.png",
     "name": "Lolito",
     "description": "Luxury big sofa",
-    "price": "Rp 7.000.000",
-    "discount": "-50%",
+    "priceLast": "7.000",
+    "discount": false,
     "productNew": false
 
   },
@@ -102,7 +118,8 @@
     "img": "./assets/img/product4.png",
     "name": "Respira",
     "description": "Outdoor bar table and stool",
-    "price": "Rp 500.000",
+    "priceLast": "5.000",
+    "discount": false,
     "productNew": true
   },
   {
@@ -110,8 +127,10 @@
     "img": "./assets/img/product1.png",
     "name": "Syltherine",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.500,000",
-    "discount": "-30%",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
     "productNew": false
   },
   {
@@ -119,7 +138,10 @@
     "img": "./assets/img/product2.png",
     "name": "Leviosa",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.5,000",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
     "productNew": false
   },
   {
@@ -127,8 +149,8 @@
     "img": "./assets/img/product3.png",
     "name": "Lolito",
     "description": "Luxury big sofa",
-    "price": "Rp 7.000.000",
-    "discount": "-50%",
+    "priceLast": "7.000",
+    "discount": false,
     "productNew": false
 
   },
@@ -137,7 +159,8 @@
     "img": "./assets/img/product4.png",
     "name": "Respira",
     "description": "Outdoor bar table and stool",
-    "price": "Rp 500.000",
+    "priceLast": "5.000",
+    "discount": false,
     "productNew": true
   },
   {
@@ -145,8 +168,10 @@
     "img": "./assets/img/product1.png",
     "name": "Syltherine",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.500,000",
-    "discount": "-30%",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
     "productNew": false
   },
   {
@@ -154,7 +179,10 @@
     "img": "./assets/img/product2.png",
     "name": "Leviosa",
     "description": "Stylish cafe chair",
-    "price": "Rp R$ 2.5,000",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
     "productNew": false
   },
   {
@@ -162,8 +190,8 @@
     "img": "./assets/img/product3.png",
     "name": "Lolito",
     "description": "Luxury big sofa",
-    "price": "Rp 7.000.000",
-    "discount": "-50%",
+    "priceLast": "7.000",
+    "discount": false,
     "productNew": false
 
   },
@@ -172,7 +200,131 @@
     "img": "./assets/img/product4.png",
     "name": "Respira",
     "description": "Outdoor bar table and stool",
-    "price": "Rp 500.000",
+    "priceLast": "5.000",
+    "discount": false,
+    "productNew": true
+  },
+  {
+    "id": "0",
+    "img": "./assets/img/product1.png",
+    "name": "Syltherine",
+    "description": "Stylish cafe chair",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
+    "productNew": false
+  },
+  {
+    "id": "1",
+    "img": "./assets/img/product2.png",
+    "name": "Leviosa",
+    "description": "Stylish cafe chair",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
+    "productNew": false
+  },
+  {
+    "id": "2",
+    "img": "./assets/img/product3.png",
+    "name": "Lolito",
+    "description": "Luxury big sofa",
+    "priceLast": "7.000",
+    "discount": false,
+    "productNew": false
+
+  },
+  {
+    "id": "3",
+    "img": "./assets/img/product4.png",
+    "name": "Respira",
+    "description": "Outdoor bar table and stool",
+    "priceLast": "5.000",
+    "discount": false,
+    "productNew": true
+  },
+  {
+    "id": "0",
+    "img": "./assets/img/product1.png",
+    "name": "Syltherine",
+    "description": "Stylish cafe chair",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
+    "productNew": false
+  },
+  {
+    "id": "1",
+    "img": "./assets/img/product2.png",
+    "name": "Leviosa",
+    "description": "Stylish cafe chair",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
+    "productNew": false
+  },
+  {
+    "id": "2",
+    "img": "./assets/img/product3.png",
+    "name": "Lolito",
+    "description": "Luxury big sofa",
+    "priceLast": "7.000",
+    "discount": false,
+    "productNew": false
+
+  },
+  {
+    "id": "3",
+    "img": "./assets/img/product4.png",
+    "name": "Respira",
+    "description": "Outdoor bar table and stool",
+    "priceLast": "5.000",
+    "discount": false,
+    "productNew": true
+  },
+  {
+    "id": "0",
+    "img": "./assets/img/product1.png",
+    "name": "Syltherine",
+    "description": "Stylish cafe chair",
+    "priceLast": "3.500",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "30",
+    "productNew": false
+  },
+  {
+    "id": "1",
+    "img": "./assets/img/product2.png",
+    "name": "Leviosa",
+    "description": "Stylish cafe chair",
+    "priceLast": "2.000",
+    "priceWithoutDiscount": "2.500",
+    "discount": true,
+    "percentageDiscount": "20",
+    "productNew": false
+  },
+  {
+    "id": "2",
+    "img": "./assets/img/product3.png",
+    "name": "Lolito",
+    "description": "Luxury big sofa",
+    "priceLast": "7.000",
+    "discount": false,
+    "productNew": false
+
+  },
+  {
+    "id": "3",
+    "img": "./assets/img/product4.png",
+    "name": "Respira",
+    "description": "Outdoor bar table and stool",
+    "priceLast": "5.000",
+    "discount": false,
     "productNew": true
   }
 ]

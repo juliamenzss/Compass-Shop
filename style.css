@@ -309,9 +309,62 @@ body {
   margin-right: .8rem;
 }
 
-.filter {
+
+/* FILTER PER PRICE AND NAME  */
+
+.filterPriceAndName{
+  position: relative;
   display: flex;
   padding-left: 4rem;
+}
+.filterImg{
+  cursor: pointer;
+  display: flex;
+  padding-left: 4rem;
+}
+
+.containerFilter{
+  width: 300px;
+  height: 85px;
+  background-color: #fff;
+  position: absolute;
+  top: 150%;
+  left: 27%;
+  z-index: 1000;
+}
+
+.containerFilter{
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.containerFilter .checkbox{
+  padding: .5rem;
+}
+
+.checkUnderline{
+  margin: 0 1rem;
+  width: 1px;
+  height: 50px;
+  border: .6px solid rgba(0, 0, 0, 0.404);
+}
+.containerFilter.hidden{
+  display: none;
+}
+
+/* .filterPriceAndName .hidden {
+  display: none;
+}
+.filterPriceAndName .visible {
+  display: block;
+} */
+
+
+.underline {
+  margin: 0 1rem 0 1rem;
+  height: 20px;
+  border: .6px solid rgba(0, 0, 0, 0.404);
 }
 
 #products {
@@ -324,7 +377,65 @@ body {
   padding: 5px
 }
 
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semitransparente */
+  display: none;
+  /* Inicialmente escondido */
+  z-index: 99;
+}
 
+.invalidEmail {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  background-color: rgb(249, 241, 231, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.validEmail {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 100px;
+  background-color: rgb(249, 241, 231, 0.3);
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+
+.overlay.visible {
+  display: block;
+}
+
+.invalidEmail.visible {
+  display: flex;
+}
+
+.validEmail.visible {
+  display: flex;
+}
 
 
 
@@ -343,6 +454,7 @@ body {
 }
 
 .productCard {
+  box-sizing: border-box;
   position: relative;
   border-radius: 1px;
   overflow: hidden;
@@ -353,8 +465,8 @@ body {
 
 .newBadge {
   position: absolute;
-  top: 40px; 
-  right: 50px; 
+  top: 40px;
+  right: 50px;
   width: 40px;
   height: 40px;
   color: white;
@@ -371,8 +483,8 @@ body {
 
 .discountBadge {
   position: absolute;
-  top: 40px; 
-  right: 50px; 
+  top: 40px;
+  right: 50px;
   width: 40px;
   height: 40px;
   color: white;
@@ -426,7 +538,8 @@ body {
 .productPriceContainer {
   display: flex;
   align-items: center;
-  gap: 10px; /* Espaço entre os preços */
+  gap: 10px;
+  /* Espaço entre os preços */
 }
 
 .productPrice {
@@ -436,12 +549,17 @@ body {
 }
 
 .originalPrice {
-  font-size: 16px;
-  font-weight: bold;
-  color: #a415cf;
+  font-size: 14px;
+  color: #b3b3b3;
   text-decoration: line-through;
 }
 
+.containerPrice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
 
 #paginationContainer {
   display: flex;
@@ -688,8 +806,6 @@ ul li.active {
   outline: none;
   border: none;
   padding: 8px 15px;
-  margin: 5px;
-  margin-left: 0px;
   display: flex;
   justify-content: center;
   cursor: pointer;
@@ -742,7 +858,33 @@ ul li.active {
   display: none;
 }
 
-.newsletterEmail input{ 
+.newsletterEmail input {
   background-color: #a415cf;
 
+}
+
+ /* SHOW AND
+ */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.productShow{
+  width: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#productCount{
+  color: #9F9F9F;
+  padding-left: 10px ;
+  border: none;
+  width: 35px;
+  height: 35px;
+}
+
+#productCount:focus{
+ outline: none;
 }

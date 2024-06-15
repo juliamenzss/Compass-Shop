@@ -32,6 +32,7 @@
   </div>
 
 
+
   <div class="sidebarIcons">
     <ul>
       <li>
@@ -107,16 +108,54 @@
 
   
   <div class="headerBottom">
-    <div class="filter">
-      <img src="./assets/icons/filter.png" alt="filter icon">
-      <p>Filter</p>
-    </div>
+    <div class="filterPriceAndName">
+      <div class="filterImg" >
+       <img src="./assets/icons/filter.png"  alt="icon">
+      </div>
+        <p>Filter</p>
+        <div class="underline"></div>
+        <div class="resultsPage"></div>
+
+
+
+        <div class="containerFilter hidden">
+          <div class="checkbox">
+          <div>
+            <input type="radio" id="myCheckbox1" name="order" class="customRadio">
+          <label for="myCheckbox">A - Z</label>
+        </div>
+
+        <div>
+          <input type="radio" id="myCheckbox2" name="order" class="customRadio">
+          <label for="myCheckbox">Z - A</label>
+        </div>
+      </div>
+
+      <div class="checkUnderline"></div>
+
+      <div class="checkbox">
+        <div>
+          <input type="radio" id="myCheckbox3" name="order" class="customRadio">
+          <label for="myCheckbox1">Maior - Menor</label>
+        </div>
+
+        <div>
+          <input type="radio" id="myCheckbox4" name="order" class="customRadio">
+          <label for="myCheckbox2">Menor - Maior</label>
+        </div>
+      </div>
+        </div>
+
+      </div>
+      
+
     
-    <!-- arrumar show e frase -->
-    <div>
-      <div class="resultsPage">Showing 1–16 of 32 results</div>
+    
+    <div class="productShow">
       <label>Show</label>
+      <div>
       <input type="number" id="productCount" value="16" min="1">
+    </div>
   </div>
   </div>
 
@@ -203,13 +242,29 @@
         <a href="#">Contact</a>
       </li>
     </ul></div>
+
   <div class="newsletter">
     <h4>Newsletter</h4>
     <label for="email" >Email:</label>
     <input type="text" id="email" name="email">
-    <button type="submit">Submit</button></div>
+    <button class="submit">Submit</button></div>
+    <div class="overlay"></div>
+    <div class="invalidEmail">
+      <h1>Invalid Email</h1>
+      <button class="buttonOk">Ok</button>
+  </div>
+
+  <div class="validEmail">
+    <h1>Send Email</h1>
+    <button class="buttonOk">Ok</button>
+</div>
+
+  
   </div>
   <div class="copyright"><p>2024 Compass Uol</p></div>
+
+
+  
   </footer>
 
   <script type="module" src="index.js"></script>

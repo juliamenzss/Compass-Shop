@@ -8,40 +8,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const sendHtml = () => {
     products.innerHTML = '';
 
-
     // MESSAGE SHOWING 1-16 PRODUCTS
     function createMessageResult() {
-      if (!bancodedados || !Array.isArray(bancodedados) || bancodedados.length === 0) {
+      if (
+        !bancodedados ||
+        !Array.isArray(bancodedados) ||
+        bancodedados.length === 0
+      ) {
         resultsPage.innerHTML = 'Valor inválido';
         return;
       }
 
       const totalPages = Math.ceil(bancodedados.length / show);
-      if (currentPage < 1 || currentPage > totalPages || show > bancodedados.length) {
+      if (
+        currentPage < 1 ||
+        currentPage > totalPages ||
+        show > bancodedados.length
+      ) {
         resultsPage.innerHTML = 'Valor inválido';
         return;
       }
 
-      
-
       let start = (currentPage - 1) * show + 1;
+
       let end = Math.min(currentPage * show, bancodedados.length);
       let message = `Showing ${start}-${end} of ${bancodedados.length} results`;
       resultsPage.innerHTML = message;
     }
 
     if (show > 0) {
-      createMessageResult()
-    } 
-    
- 
-    document.getElementById('productCount').addEventListener('input', function(e) {
-      var value = parseInt(e.target.value);
-      if (value < 1) {
-          e.target.value = show
-      }
-  });
+      createMessageResult();
+    }
 
+    document
+      .getElementById('productCount')
+      .addEventListener('input', function (e) {
+        var value = parseInt(e.target.value);
+        if (value < 1) {
+          e.target.value = show;
+        }
+      });
 
     const start = (currentPage - 1) * show;
     const end = Math.min(currentPage * show, bancodedados.length);
@@ -68,37 +74,30 @@ document.addEventListener('DOMContentLoaded', () => {
       productDescription.classList.add('productDescription');
       productDescription.innerHTML = db.description;
 
+      const containerPrice = document.createElement('div');
+      containerPrice.classList.add('containerPrice');
 
-
-
-
-       // Discount
+      // Discount
       const productPrice = document.createElement('div');
       productPrice.classList.add('productPrice');
-      const originalPrice = parseFloat(db.price.replace(/[^\d,]/g, '').replace(',', '.'));
-      const discountPrice = db.discount ? originalPrice * (1 - parseFloat(db.percentageDiscount) / 100) : originalPrice;
-      productPrice.innerHTML = `Rp ${discountPrice.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+      productPrice.innerHTML = `Rp ${db.priceLast}`;
 
-      const originalPriceElement = document.createElement('div');
-      originalPriceElement.classList.add('originalPrice');
-      if (db.discount) {
-        originalPriceElement.innerHTML = `Rp ${originalPrice.toLocaleString('id-ID', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-        originalPriceElement.style.textDecoration = 'line-through';
+      const priceWithoutDiscount = document.createElement('div');
+
+      if (db.discount == true) {
+        priceWithoutDiscount.classList.add('originalPrice');
+        priceWithoutDiscount.innerHTML = `Rp ${db.priceWithoutDiscount}`;
       }
-
-
-
-  
 
       // TAG DISCOUNT
-      const newDiscount = document.createElement('div')
-      if (db.discount === true || db.percentageDiscount === "30") {
+      const newDiscount = document.createElement('div');
+      if (db.discount === true || db.percentageDiscount === '30') {
         newDiscount.classList.add('discountBadge');
-        newDiscount.innerHTML = `${db.percentageDiscount}%`
+        newDiscount.innerHTML = `${db.percentageDiscount}%`;
       } else {
-        newDiscount.classList.remove('newDiscount')
+        newDiscount.classList.remove('newDiscount');
       }
-      
+
       // TAG NEW PRODUCT
       const newBadge = document.createElement('div');
       if (db.productNew === true) {
@@ -107,10 +106,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         newBadge.classList.remove('newBadge');
       }
-
-
-
-
 
       const button = document.createElement('div');
       button.classList.add('button', 'hidden');
@@ -137,8 +132,6 @@ document.addEventListener('DOMContentLoaded', () => {
       const bg = document.createElement('div');
       bg.classList.add('bg');
 
-
-      
       ul.appendChild(createListItem('./assets/icons/share.png', 'Share'));
       ul.appendChild(createListItem('./assets/icons/compare.png', 'Compare'));
       ul.appendChild(createListItem('./assets/icons/like.png', 'Like'));
@@ -151,44 +144,48 @@ document.addEventListener('DOMContentLoaded', () => {
 
       productInfo.appendChild(productName);
       productInfo.appendChild(productDescription);
-      productInfo.appendChild(productPrice);
-      
+
+      containerPrice.appendChild(productPrice);
+      containerPrice.appendChild(priceWithoutDiscount);
+
+      productInfo.appendChild(containerPrice);
+
       productCard.appendChild(newBadge);
       productCard.appendChild(newDiscount);
-      
+
       productCard.appendChild(productInfo);
       productCard.appendChild(button);
-      
+
       products.appendChild(productCard);
+    });
+
+    addHoverEffect();
+    updatePagination();
+  };
+
+  // PAGINATION
+  const updatePagination = () => {
+    const paginationList = document.getElementById('paginationList');
+    paginationList.innerHTML = '';
+
+    const totalPages = Math.ceil(bancodedados.length / show);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#" class="${
+        i === currentPage ? 'active' : ''
+      }">${i}</a>`;
+      li.addEventListener('click', () => {
+        currentPage = i;
+        sendHtml();
       });
-      
-      addHoverEffect();
-      updatePagination();
-      };
-      
-      
-      
-      // PAGINATION
-      const updatePagination = () => {
-        const paginationList = document.getElementById('paginationList');
-        paginationList.innerHTML = '';
-        
-        const totalPages = Math.ceil(bancodedados.length / show);
-        
-        for (let i = 1; i <= totalPages; i++) {
-          const li = document.createElement('li');
-          li.innerHTML = `<a href="#" class="${i === currentPage ? 'active' : ''}">${i}</a>`;
-          li.addEventListener('click', () => {
-            currentPage = i;
-            sendHtml();
-            });
-            paginationList.appendChild(li);
-            }
-            
-            const nextPageButton = document.getElementById('nextPage');
-            nextPageButton.addEventListener('click', () => {
-              if (currentPage < totalPages) {
-                currentPage++;
+      paginationList.appendChild(li);
+    }
+
+    const nextPageButton = document.getElementById('nextPage');
+    nextPageButton.addEventListener('click', () => {
+      if (currentPage < totalPages) {
+        currentPage++;
         sendHtml();
       }
     });
@@ -212,23 +209,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  
   // MENU HAMBURGUER
   const sidebar = document.querySelector('.sidebar');
   const toggleButton = document.getElementById('toggleSidebar');
-  
+
   const showSidebar = () => {
     if (sidebar) {
       sidebar.classList.add('visible');
-      }
-      };
-      fetch('./db/db.json')
-        .then((response) => response.json())
-        .then((db) => {
-          bancodedados = db;
-          sendHtml();
-        })
-        .catch((error) => console.error('Erro ao carregar o JSON:', error));
+    }
+  };
 
   const closeMenu = document.querySelector('.closeMenu');
   if (closeMenu) {
@@ -251,24 +240,133 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
+  const filterImg = document.querySelector('.filterImg');
+  const containerFilter = document.querySelector('.containerFilter');
+  filterImg.addEventListener('click', () => {
+    containerFilter.classList.toggle('hidden');
+  });
+
+  fetch('./db/db.json')
+    .then((response) => response.json())
+    .then((db) => {
+      bancodedados = db;
+      sendHtml();
+    })
+    .catch((error) => console.error('Erro ao carregar o JSON:', error));
+
+  const buttonOk = document.querySelectorAll('.buttonOk');
+  const overlay = document.querySelector('.overlay');
+  const validEmail = document.querySelector('.validEmail');
+  const invalidEmail = document.querySelector('.invalidEmail');
+  const submit = document.querySelector('.submit');
+  const inputEmail = document.querySelector('#email');
+
   // EMAIL VALIDATION
-    document.getElementById('email').addEventListener('input', function(e) {
-      const email = e.target.value;
-      // const result = document.getElementById('result');
-  
-      if (isValidEmail(email)) {
-        alert('Email succeffully registered');
-        e.target.value = ''
-      } else {
-        alert('Invalid email!');
-        e.target.value = ''
-      }
-    });
-  
-    function isValidEmail(email) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      return emailRegex.test(email);
+  submit.addEventListener('click', function () {
+    const email = inputEmail.value;
+
+    if (isValidEmail(email)) {
+      inputEmail.value = '';
+      validEmail.classList.add('visible');
+      overlay.classList.add('visible');
+    } else {
+      inputEmail.value = '';
+      overlay.classList.add('visible');
+      invalidEmail.classList.add('visible');
     }
   });
-  
-  
+
+  function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
+
+  buttonOk.forEach((button) => {
+    button.addEventListener('click', () => {
+      overlay.classList.remove('visible');
+      invalidEmail.classList.remove('visible');
+      validEmail.classList.remove('visible');
+    });
+  });
+
+  const convertPriceToNumber = (priceStr) => {
+    const numericValue = parseFloat(
+      priceStr.replace(/[^\d.,]/g, '').replace(',', '.')
+    );
+    return isNaN(numericValue) ? 0 : numericValue;
+  };
+
+  const customRadio = document.querySelectorAll('.customRadio');
+  let checkedRadio = '';
+  let filter = false;
+  customRadio.forEach((radio) => {
+    radio.addEventListener('click', () => {
+      if (radio.checked) {
+        if (checkedRadio === '') {
+          checkedRadio = radio.id;
+          filter = true;
+        } else if (checkedRadio === radio.id) {
+          radio.checked = false;
+          checkedRadio = '';
+          filter = false;
+          containerFilter.classList.toggle('hidden');
+          location.reload();
+
+        } else {
+          checkedRadio = radio.id;
+          filter = true;
+        }
+      } else {
+        checkedRadio = '';
+      }
+      
+
+      if (filter) {
+        if (radio.id == 'myCheckbox1') {
+          bancodedados.sort((a, b) => a.name.localeCompare(b.name));
+          currentPage = 1;
+          sendHtml();
+        } else if (radio.id == 'myCheckbox2') {
+          bancodedados.sort((a, b) => b.name.localeCompare(a.name)); // Ordena de Z a A
+          currentPage = 1; // Reinicia para a primeira página após a ordenação
+          sendHtml();
+        } else if (radio.id == 'myCheckbox3') {
+          bancodedados.sort((a, b) => {
+            const priceA = convertPriceToNumber(a.priceLast);
+            const priceB = convertPriceToNumber(b.priceLast);
+
+            return priceB - priceA;
+          });
+          currentPage = 1;
+          sendHtml();
+        }else{
+          bancodedados.sort((a, b) => {
+            const priceA = convertPriceToNumber(a.priceLast);
+            const priceB = convertPriceToNumber(b.priceLast);
+
+            return priceA - priceB;
+          });
+          currentPage = 1;
+          sendHtml();
+        }
+        containerFilter.classList.toggle('hidden');
+
+
+      }
+
+      //     bancodedados.sort((a, b) => a.name.localeCompare(b.name));
+      // currentPage = 1; // Reset to the first page after sorting
+      // sendHtml();
+    });
+  });
+
+  // filterImg.addEventListener('click', () => {
+  //   containerFilter.classList.toggle('hidden');
+
+  //   if (!containerFilter.classList.contains('hidden')) {
+  //     bancodedados.sort((a, b) => a.name.localeCompare(b.name));
+  //     currentPage = 1; // Reset to the first page after sorting
+  //     sendHtml();
+  //   }
+  // });
+});
