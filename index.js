@@ -252,13 +252,13 @@ document.addEventListener('DOMContentLoaded', () => {
       bancodedados = db;
       sendHtml();
     })
-    .catch((error) => console.error('Erro ao carregar o JSON:', error));
+    .catch((error) => console.error('Error, try again', error));
 
   const buttonOk = document.querySelectorAll('.buttonOk');
   const overlay = document.querySelector('.overlay');
   const validEmail = document.querySelector('.validEmail');
   const invalidEmail = document.querySelector('.invalidEmail');
-  const submit = document.querySelector('.submit');
+  const submit = document.querySelector('.subscribe');
   const inputEmail = document.querySelector('#email');
 
   // EMAIL VALIDATION
