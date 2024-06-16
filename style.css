@@ -198,9 +198,6 @@ body {
 
 #toggleSidebar {
   display: none;
-  /* height: 0;
-  overflow: hidden;
-  cursor: pointer; */
 }
 
 
@@ -309,13 +306,6 @@ body {
   display: none;
 }
 
-/* .filterPriceAndName .hidden {
-  display: none;
-}
-.filterPriceAndName .visible {
-  display: block;
-} */
-
 
 .underline {
   margin: 0 1rem 0 1rem;
@@ -344,40 +334,43 @@ body {
   z-index: 99;
 }
 
+
+.validEmail,
 .invalidEmail {
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 300px;
-  height: 100px;
-  background-color: rgb(249, 241, 231, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+  height: 150px;
+  border-radius: 10px;
+  background-color: #fff;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1000;
+  color: #3A3A3A;
+
 }
 
-.validEmail {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  height: 100px;
-  background-color: rgb(249, 241, 231, 0.3);
-  backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
+.buttonOk {
+  cursor: pointer;
+  border-radius: 10px;
+  color: #3A3A3A;
+  background-color: #F9F1E7;
+  font-weight: 600;
+  border: none;
+  margin-top: 1rem;
+  padding: .7rem;
+
+  transition: .2s ease-in-out;
 }
 
+.buttonOk:hover {
+  background-color: #B88E2F;
+  color: #fff;
+}
 
 .overlay.visible {
   display: block;
@@ -392,26 +385,9 @@ body {
 }
 
 
-
-
-
-#products .productCard {
-  display: none;
-}
-
-#products .productCard.visible {
-  display: block;
-}
-
-#products .productCard.hidden {
-  display: none;
-}
-
 .productCard {
-  box-sizing: border-box;
   position: relative;
   border-radius: 1px;
-  overflow: hidden;
   width: 300px;
   padding: 20px;
 }
@@ -419,9 +395,10 @@ body {
 
 /* HOVER */
 .button.visible {
-  position: relative;
-  top: -60%;
+  position: absolute;
+  top: 45%;
   left: 50%;
+  width: 260px;
   transform: translate(-50%, -50%);
   z-index: 10;
 }
@@ -431,10 +408,12 @@ body {
 .button button {
   background-color: #ffffff;
   color: #B88E2F;
+  font-weight: 600;
+  border: none;
   font-size: 16px;
   position: relative;
   left: 48%;
-  transform: translate(-50%, 60%);
+  transform: translate(-50%);
   outline: none;
   border: none;
   padding: 10px 40px;
@@ -451,12 +430,13 @@ body {
   align-items: center;
   color: #ffffff;
   font-size: 14px;
-  padding: 20px;
-  padding-top: 40px;
+  padding: 20px 40px 0 27px;
   margin-right: 8px;
 }
 
 .details a {
+  font-size: 12px;
+  font-weight: 600;
   color: #ffffff;
   text-decoration: none;
   margin-right: 10px;
@@ -469,18 +449,24 @@ body {
   display: flex;
 }
 
+.details ul li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .details img {
-  margin-right: 2.5px;
+  margin-right: 2px;
   padding: 1.1px;
   list-style: none;
-  width: 12px;
-  height: 12px;
+  width: 15px;
+  height: 15px;
 }
 
 .bg {
   position: absolute;
   padding: 0;
-  top: -100px;
+  top: -138px;
   width: calc(100% + -10px);
   height: calc(100% + 315px);
   background-color: #3a3a3aa4;
@@ -712,11 +698,19 @@ ul li.active {
   background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   justify-content: space-between;
   list-style: none;
   height: auto;
   margin: 30px;
+  padding: 2rem 0 0 2rem;
+}
+
+.contentFooter h3 {
+  padding-top: 20px;
+  padding-left: 20px;
+}
+
+.contentFooter p {
   padding: 20px;
 }
 
@@ -725,7 +719,7 @@ ul li.active {
   flex-direction: column;
   color: #9F9F9F;
   font-size: 16px;
-  width: 250px;
+  width: 280px;
 }
 
 .address h3 {
@@ -734,6 +728,7 @@ ul li.active {
   color: #000000;
   font-size: 24px;
   padding-bottom: 50px;
+
 }
 
 .links {
@@ -741,13 +736,11 @@ ul li.active {
   flex-direction: column;
   color: #000000;
   font-size: 16px;
-  width: 250px;
+  /* width: 280px; */
   /* padding: 10px; */
 }
 
-.address {
-  padding: 15px;
-}
+
 
 .links ul li {
   text-decoration: none;
@@ -781,7 +774,7 @@ ul li.active {
   flex-direction: column;
   color: #000000;
   font-size: 16px;
-  width: 250px;
+  /* width: 280px; */
   /* padding: 10px; */
 }
 
@@ -813,16 +806,15 @@ ul li.active {
 
 .newsletter {
   padding: 16px;
-  width: 250px;
   color: #9F9F9F;
 }
 
 #email {
-  width: 200PX;
   padding: .2rem 0;
   border: none;
   border-bottom: 1px solid black;
   margin-right: 10px;
+  width: 175px;
 }
 
 #email:focus {
@@ -915,6 +907,8 @@ input[type="number"]::-webkit-inner-spin-button {
   padding-right: 24px;
 }
 
+
+
 @media screen and (max-width: 1200px) {
   .navbar ul li {
     font-size: 14px;
@@ -927,6 +921,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 @media screen and (max-width: 800px) {
+
   #toggleSidebar {
     display: block;
     height: auto;
@@ -968,6 +963,22 @@ input[type="number"]::-webkit-inner-spin-button {
     width: 250px;
     left: 20%;
   }
+
+  .links ul li a {
+    font-size: 14px;
+    padding: 0 16px 0 16px;
+  }
+
+  .help ul li a {
+    font-size: 14px;
+    padding: 0 16px 0 16px;
+
+  }
+
+  .footer h4 {
+    padding-top: 1.5rem;
+    padding-bottom: .5rem;
+  }
 }
 
 
@@ -980,6 +991,11 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-left: 1rem;
   }
 
+  .service {
+    padding: 2rem;
+    margin-left: 2.5rem;
+  }
+
   .service h2 {
     font-size: 15px;
     white-space: nowrap
@@ -987,7 +1003,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
   .service p {
     font-size: 10px;
-    white-space: nowrap
+    white-space: nowrap;
   }
 
   .service img {
