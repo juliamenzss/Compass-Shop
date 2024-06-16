@@ -4,14 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  
   <title>Compass</title>
   <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
   <nav>
   <div class="sidebar">
-
 
   <div>
     <ul>
@@ -20,39 +19,33 @@
         <a>Home</a>
       </li>
       <li>
-        <a href="/shop"><p>Shop</p></a>
+        <a href="#">Shop</a>
       </li>
       <li>
-        <a href="/about"><p>About</p></a>
+        <a href="#">About</a>
       </li>
       <li>
-        <a href="/contact"><p>Contact</p></a>
+        <a href="#">Contact</a>
       </li>
     </ul>
   </div>
-
-
 
   <div class="sidebarIcons">
     <ul>
       <li>
         <a href="#"><img src="assets/icons/profile.png" alt="profile icon"><p>Profile</p></a>
-        
       </li>
       <li>
         <a href="#"><img src="assets/icons/search.png" alt="search icon"><p>Search</p></a>
-        
       </li>
       <li>
         <a href="#"><img src="assets/icons/favorite.png" alt="favorite icon"><p>Favorites</p></a>
-        
       </li>
       <li>
-        <a href="#"><img src="assets/icons/cart.png" alt="shopping cart icon">Shop card</a>
-        
+        <a href="#"><img src="assets/icons/cart.png" alt="shopping cart icon">Shop cart</a>
       </li>
-</ul>
-</div>
+    </ul>
+  </div>
   
   </div>
  <div class="nav">
@@ -67,16 +60,16 @@
         <a>Home</a>
       </li>
       <li>
-        <a href="/shop">Shop</a>
+        <a href="#">Shop</a>
       </li>
       <li>
-        <a href="/about">About</a>
+        <a href="#">About</a>
       </li>
       <li>
-        <a href="/contact">Contact</a>
+        <a href="#">Contact</a>
       </li>
-      </div>
-
+      </ul>
+  </div>
 
   <div class="navIcons">
     <ul>
@@ -92,10 +85,9 @@
       <li>
         <a href="#"><img src="assets/icons/cart.png" alt="shopping cart icon"></a>
       </li>
-
     </ul>
   </div>
-
+  </div>
   </nav> 
 
   <div class="header">
@@ -106,123 +98,114 @@
     </div>
   </div>
 
-  
   <div class="headerBottom">
     <div class="filterPriceAndName">
       <div class="filterImg" >
        <img src="./assets/icons/filter.png"  alt="icon">
       </div>
-        <p>Filter</p>
+        <p class="filterName">Filter</p>
         <div class="underline"></div>
         <div class="resultsPage"></div>
-
-
-
         <div class="containerFilter hidden">
           <div class="checkbox">
           <div>
             <input type="radio" id="myCheckbox1" name="order" class="customRadio">
           <label for="myCheckbox">A - Z</label>
         </div>
-
         <div>
           <input type="radio" id="myCheckbox2" name="order" class="customRadio">
           <label for="myCheckbox">Z - A</label>
         </div>
       </div>
-
       <div class="checkUnderline"></div>
-
       <div class="checkbox">
         <div>
           <input type="radio" id="myCheckbox3" name="order" class="customRadio">
-          <label for="myCheckbox1">Maior - Menor</label>
+          <label for="myCheckbox1">Price: High to Low</label>
         </div>
-
         <div>
           <input type="radio" id="myCheckbox4" name="order" class="customRadio">
-          <label for="myCheckbox2">Menor - Maior</label>
+          <label for="myCheckbox2">Price: Low to High</label>
         </div>
       </div>
-        </div>
+    </div>
+  </div>
 
-      </div>
-      
-
-    <div class="productShow">
-      <label>Show</label>
-      <div>
+  <div class="productShow">
+    <label>Show</label>
+    <div>
       <input type="number" id="productCount" value="16" min="1">
     </div>
   </div>
-  </div>
-
-
+</div>
 <main>
-    <div class="products" id="products">
-
-    
+  <div class="products" id="products">   
 </main>
+
 <section>
   <div id="paginationContainer">
     <div class="pagination">
-      <ul id="paginationList">
-    </ul>
-    <button class="btn1" id="nextPage">next</button>
+      <ul id="paginationList"></ul>
+    <button class="btn1" id="nextPage">Next</button>
     </div>
     </div>
 </section>
 
 <section>
 <div class="serviceSection">
-<div class="service">
-<img src="./assets/icons/trophy.png" alt="">
-<div class="serviceText">
-  <h2>High Quality</h2>
-  <p>Crafted from top materials</p>
-</div>
-</div>
+  <div class="service">
+    <img src="./assets/icons/trophy.png" alt="">
+    <div class="serviceText">
+      <h2 class="serviceTitle">High Quality</h2>
+      <p>Crafted from top materials</p>
+    </div>
+  </div>
 
-<div class="service"><img src="./assets/icons/checking.png" alt="">
-  <div class="serviceText">
-  <h2>Warranty Protection</h2>
-  <p>Over 2 years</p></div>
-</div>
+  <div class="service"><img src="./assets/icons/checking.png" alt="">
+    <div class="serviceText">
+      <h2 class="serviceTitle">Warranty Protection</h2>
+      <p>Over 2 years</p>
+    </div>
+  </div>
 
-<div class="service"><img src="./assets/icons/shipping.png" alt="">
-  <div class="serviceText">
-  <h2>Free Shopping</h2>
-  <p>Order over 150 $</p></div>
-</div>
+  <div class="service"><img src="./assets/icons/shipping.png" alt="">
+    <div class="serviceText">
+      <h2 class="serviceTitle">Free Shopping</h2>
+      <p>Order over 150 $</p>
+    </div>
+  </div>
 
-<div class="service"><img src="./assets/icons/support.png" alt="">
-  <div class="serviceText">
-  <h2>24 / 7 Support</h2>
-  <p>Dedicated Support</p></div>
+  <div class="service"><img src="./assets/icons/support.png" alt="">
+    <div class="serviceText">
+      <h2 class="serviceTitle">24 / 7 Support</h2>
+      <p>Dedicated Support</p>
+    </div>
+  </div>
 </div>
-</div>
-
 </section>
+
   <footer class="footer">
     <div class="contentFooter">
-    <div class="address"><h3>footer.</h3> <p>Rua Alexandre Dumas, 1711 - 6º andar - Chácara Santo Antônio, São Paulo - SP, 04717-004</p></div>
+      <div class="address"><h3>footer.</h3> <p>Rua Alexandre Dumas, 1711 - 6º andar - Chácara Santo Antônio, São Paulo - SP, 04717-004</p>
+      </div>
 
     <div class="links">
       <h4>Links</h4>
       <ul>
       <li>
-        <a href="index.html">Home</a>
+        <a href="#">Home</a>
       </li>
       <li>
-        <a href="#">Shop</a>
-      </li>
-      <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Contact</a>
-      </li>
-    </ul></div>
+          <a href="#">Shop</a>
+        </li>
+        <li>
+          <a href="#">About</a>
+        </li>
+        <li>
+          <a href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
 
     <div class="help"> 
       <h4>Help</h4>
@@ -242,30 +225,25 @@
     </ul></div>
 
     <div class="newsletter">
-    <h4>Newsletter</h4>
-    <div class="containerEmail">
-    <input type="text" id="email" name="email" placeholder="Enter Your Email Address">
-    <button class="subscribe">SUBSCRIBE</button>
-  </div>
+      <h4>Newsletter</h4>
+      <div class="containerEmail">
+        <input type="text" id="email" name="email" placeholder="Enter Your Email Address">
+        <button class="subscribe">SUBSCRIBE</button>
+      </div>
     </div>
     <div class="overlay"></div>
     <div class="invalidEmail">
       <h1>Invalid Email</h1>
       <button class="buttonOk">Ok</button>
-  </div>
+    </div>
 
-  <div class="validEmail">
-    <h1>Send Email</h1>
-    <button class="buttonOk">Ok</button>
-</div>
-
-
-</div>
-
-
-
-</footer>
-<div class="copyright"><p>2024 Compass Uol</p></div>
+      <div class="validEmail">
+        <h1>Send Email</h1>
+        <button class="buttonOk">Ok</button>
+      </div>
+      </div>
+    <div class="copyright"><p>2024 Compass Uol</p></div>
+  </footer>
 
   <script type="module" src="index.js"></script>
 </body>

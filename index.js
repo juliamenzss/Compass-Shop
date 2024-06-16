@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
         !Array.isArray(bancodedados) ||
         bancodedados.length === 0
       ) {
-        resultsPage.innerHTML = 'Valor inválido';
+        resultsPage.innerHTML = 'Invalid Value';
         return;
       }
 
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         currentPage > totalPages ||
         show > bancodedados.length
       ) {
-        resultsPage.innerHTML = 'Valor inválido';
+        resultsPage.innerHTML = 'Invalid Value';
         return;
       }
 
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const containerPrice = document.createElement('div');
       containerPrice.classList.add('containerPrice');
 
-      // Discount
+      // DISCOUNT
       const productPrice = document.createElement('div');
       productPrice.classList.add('productPrice');
       productPrice.innerHTML = `Rp ${db.priceLast}`;
@@ -289,6 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // FILTER PRICE AND NAME
   const convertPriceToNumber = (priceStr) => {
     const numericValue = parseFloat(
       priceStr.replace(/[^\d.,]/g, '').replace(',', '.')
@@ -311,7 +312,6 @@ document.addEventListener('DOMContentLoaded', () => {
           filter = false;
           containerFilter.classList.toggle('hidden');
           location.reload();
-
         } else {
           checkedRadio = radio.id;
           filter = true;
@@ -319,7 +319,6 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         checkedRadio = '';
       }
-      
 
       if (filter) {
         if (radio.id == 'myCheckbox1') {
@@ -327,8 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
           currentPage = 1;
           sendHtml();
         } else if (radio.id == 'myCheckbox2') {
-          bancodedados.sort((a, b) => b.name.localeCompare(a.name)); // Ordena de Z a A
-          currentPage = 1; // Reinicia para a primeira página após a ordenação
+          bancodedados.sort((a, b) => b.name.localeCompare(a.name));
+          currentPage = 1;
           sendHtml();
         } else if (radio.id == 'myCheckbox3') {
           bancodedados.sort((a, b) => {
@@ -339,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
           });
           currentPage = 1;
           sendHtml();
-        }else{
+        } else {
           bancodedados.sort((a, b) => {
             const priceA = convertPriceToNumber(a.priceLast);
             const priceB = convertPriceToNumber(b.priceLast);
@@ -350,23 +349,7 @@ document.addEventListener('DOMContentLoaded', () => {
           sendHtml();
         }
         containerFilter.classList.toggle('hidden');
-
-
       }
-
-      //     bancodedados.sort((a, b) => a.name.localeCompare(b.name));
-      // currentPage = 1; // Reset to the first page after sorting
-      // sendHtml();
     });
   });
-
-  // filterImg.addEventListener('click', () => {
-  //   containerFilter.classList.toggle('hidden');
-
-  //   if (!containerFilter.classList.contains('hidden')) {
-  //     bancodedados.sort((a, b) => a.name.localeCompare(b.name));
-  //     currentPage = 1; // Reset to the first page after sorting
-  //     sendHtml();
-  //   }
-  // });
 });
