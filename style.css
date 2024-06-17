@@ -143,12 +143,6 @@ body {
   color: #00000088;
 }
 
-/* .sidebarIcons {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}  */
-
 .sidebarIcons ul {
   color: rgb(0, 0, 0);
   width: 100%;
@@ -372,7 +366,6 @@ input[type='number']::-webkit-inner-spin-button {
   display: block;
   width: 250px;
   height: 250px;
-  /* margin-right: 10px; */
 }
 
 .productInfo {
@@ -400,12 +393,6 @@ input[type='number']::-webkit-inner-spin-button {
   font-weight: 500;
 }
 
-/* .productPriceContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-} */
 
 .productPrice {
   font-size: 16px;
@@ -897,7 +884,6 @@ ul li.active {
   font-weight: 500;
 }
 
-/* -----RESPONSIVIDADE----- */
 
 @media screen and (max-width: 1200px) {
   .navbar ul li {
@@ -929,7 +915,7 @@ ul li.active {
 
 
 .sidebarIcons ul{
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 
 }
   .logo a {

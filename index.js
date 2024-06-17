@@ -107,6 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newBadge.classList.remove('newBadge');
       }
 
+      // SECTION DETAILS ABOUT PRODUCT INSIDE HOVER
       const button = document.createElement('div');
       button.classList.add('button', 'hidden');
 
@@ -163,6 +164,24 @@ document.addEventListener('DOMContentLoaded', () => {
     updatePagination();
   };
 
+  // HOVER EFFECT
+  const addHoverEffect = () => {
+    const productCards = document.querySelectorAll('.productCard');
+    productCards.forEach((productCard) => {
+      productCard.addEventListener('mouseover', () => {
+        const button = productCard.querySelector('.button');
+        button.classList.remove('hidden');
+        button.classList.add('visible');
+      });
+
+      productCard.addEventListener('mouseout', () => {
+        const button = productCard.querySelector('.button');
+        button.classList.remove('visible');
+        button.classList.add('hidden');
+      });
+    });
+  };
+
   // PAGINATION
   const updatePagination = () => {
     const paginationList = document.getElementById('paginationList');
@@ -191,24 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // HOVER EFFECT
-  const addHoverEffect = () => {
-    const productCards = document.querySelectorAll('.productCard');
-    productCards.forEach((productCard) => {
-      productCard.addEventListener('mouseover', () => {
-        const button = productCard.querySelector('.button');
-        button.classList.remove('hidden');
-        button.classList.add('visible');
-      });
-
-      productCard.addEventListener('mouseout', () => {
-        const button = productCard.querySelector('.button');
-        button.classList.remove('visible');
-        button.classList.add('hidden');
-      });
-    });
-  };
-
   // MENU HAMBURGUER
   const sidebar = document.querySelector('.sidebar');
   const toggleButton = document.getElementById('toggleSidebar');
@@ -227,11 +228,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-
   if (toggleButton) {
     toggleButton.addEventListener('click', showSidebar);
   }
 
+  // CLICK ENTER AND UPDATE HTML -- USE FOR FILTER PER PAGE
   const productCount = document.querySelector('#productCount');
   productCount.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
@@ -254,6 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .catch((error) => console.error('Error, try again', error));
 
+  // EMAIL VALIDATION
   const buttonOk = document.querySelectorAll('.buttonOk');
   const overlay = document.querySelector('.overlay');
   const validEmail = document.querySelector('.validEmail');
@@ -261,10 +263,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const submit = document.querySelector('.subscribe');
   const inputEmail = document.querySelector('#email');
 
-  // EMAIL VALIDATION
   submit.addEventListener('click', function () {
     const email = inputEmail.value;
 
+    // BOX VALIDATION EMAIL
     if (isValidEmail(email)) {
       inputEmail.value = '';
       validEmail.classList.add('visible');
