@@ -98,9 +98,9 @@ body {
   height: 100vh;
   width: 170px;
   z-index: 999;
-  background-color: #f9f1e781;
+  background-color: rgba(249, 241, 231, 0.706);
   backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgb(0, 0, 0, 0.1);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;
   align-items: flex-start;
@@ -733,6 +733,10 @@ ul li.active {
   font-size: 15px;
 }
 
+.links a:hover {
+  color: #00000088;
+}
+
 .help {
   display: flex;
   flex-direction: column;
@@ -770,6 +774,9 @@ ul li.active {
   font-size: 15px;
 }
 
+.help a:hover {
+  color: #00000088;
+}
 .newsletter {
   padding: 16px;
   color: #9f9f9f;
@@ -809,6 +816,9 @@ ul li.active {
   font-weight: 500;
 }
 
+.subscribe:hover {
+  color: #00000088;
+}
 .containerEmail {
   margin-top: 1rem;
   display: flex;
@@ -1074,7 +1084,7 @@ ul li.active {
   .service {
     height: 120px;
     padding: 2rem;
-    margin-left: 3em;
+    margin-left: 4em;
   }
 
   .service h2 {

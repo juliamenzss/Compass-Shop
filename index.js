@@ -247,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
     containerFilter.classList.toggle('hidden');
   });
 
+  // DB CONNECTION
   fetch('./db/db.json')
     .then((response) => response.json())
     .then((db) => {
