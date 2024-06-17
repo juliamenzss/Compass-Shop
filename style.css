@@ -4,6 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
@@ -60,7 +61,6 @@ body {
 .navbar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
@@ -124,7 +124,6 @@ body {
 .sidebar a {
   color: rgb(0, 0, 0);
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 14px;
 }
@@ -181,7 +180,6 @@ body {
 .sidebarIcons p {
   font-size: 16px;
   padding: 2px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 14px;
 }
@@ -221,21 +219,18 @@ body {
 
 .headerContent h1 {
   font-size: 35px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
 .headerContent p span {
   font-size: 16px;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
 .headerContent p {
   font-size: 16px;
   margin-bottom: 1rem;
-  font-family: 'Poppins', sans-serif;
   font-weight: 300;
 }
 
@@ -270,7 +265,6 @@ body {
   display: flex;
   align-items: center;
   padding: 0.5rem;
-  font-family: 'Poppins', sans-serif;
   font-size: 16px;
 }
 
@@ -296,7 +290,6 @@ body {
   box-shadow: 1px 1px 1px 1.5px #0000000e;
   background-color: #f9f1e781;
   backdrop-filter: blur(10px);
-  font-family: 'Poppins', sans-serif;
   font-size: 14px;
 }
 
@@ -342,7 +335,6 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .productShow label {
-  font-family: 'Poppins', sans-serif;
   font-size: 20px;
   padding-right: 10px;
 }
@@ -398,7 +390,6 @@ input[type='number']::-webkit-inner-spin-button {
   font-size: 18px;
   font-weight: bold;
   margin: 5px 0;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 
@@ -406,7 +397,6 @@ input[type='number']::-webkit-inner-spin-button {
   font-size: 14px;
   color: #898989;
   margin-bottom: 5px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
@@ -419,13 +409,11 @@ input[type='number']::-webkit-inner-spin-button {
 
 .productPrice {
   font-size: 16px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: #3a3a3a;
 }
 
 .originalPrice {
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
   color: #b3b3b3;
@@ -455,7 +443,6 @@ input[type='number']::-webkit-inner-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 12px;
 }
@@ -476,7 +463,6 @@ input[type='number']::-webkit-inner-spin-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 12px;
 }
@@ -505,7 +491,6 @@ input[type='number']::-webkit-inner-spin-button {
   display: flex;
   justify-content: center;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   font-size: 14px;
 }
@@ -529,7 +514,6 @@ input[type='number']::-webkit-inner-spin-button {
   cursor: pointer;
   margin-left: 1.2px;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
 }
 
@@ -573,7 +557,6 @@ input[type='number']::-webkit-inner-spin-button {
 #paginationList {
   display: flex;
   margin: 20px 22px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
   flex-wrap: wrap;
@@ -618,7 +601,6 @@ input[type='number']::-webkit-inner-spin-button {
   border-radius: 8px;
   padding: 0.8rem;
   cursor: pointer;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
   font-size: 14px;
 }
@@ -680,7 +662,6 @@ ul li.active {
 .serviceTitle {
   color: #242424;
   font-size: 20px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -688,7 +669,6 @@ ul li.active {
 .service p {
   font-size: 16px;
   color: #898989;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
@@ -718,7 +698,6 @@ ul li.active {
   color: #9f9f9f;
   font-size: 15px;
   width: 280px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 
@@ -728,7 +707,6 @@ ul li.active {
   color: #000000;
   font-size: 24px;
   padding-bottom: 50px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
 
@@ -753,7 +731,6 @@ ul li.active {
   flex-direction: column;
   padding: 14px;
   margin: 5px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 15px;
 }
@@ -765,7 +742,6 @@ ul li.active {
   padding: 14px;
   margin: 5px;
   color: #9f9f9f;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 15px;
 }
@@ -792,7 +768,6 @@ ul li.active {
   flex-direction: column;
   padding: 14px;
   margin: 5px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 15px;
 }
@@ -804,7 +779,6 @@ ul li.active {
   padding: 14px;
   margin: 5px;
   color: #9f9f9f;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 15px;
 }
@@ -815,7 +789,6 @@ ul li.active {
 }
 
 .newsletter h4 {
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   font-size: 15px;
 }
@@ -826,12 +799,12 @@ ul li.active {
   border-bottom: 1px solid black;
   margin-right: 10px;
   width: 175px;
+  background-color: white;
 }
 
 #email::placeholder {
   color: #9f9f9f;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
   font-weight: 400;
 }
 
@@ -846,7 +819,6 @@ ul li.active {
   border: none;
   padding: 2rem 0 0.4rem 0;
   border-bottom: 1px solid black;
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
@@ -922,7 +894,6 @@ ul li.active {
   padding: 20px;
   text-align: center;
   border-top: 1px solid rgba(122, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
 
@@ -956,6 +927,11 @@ ul li.active {
     display: none;
   }
 
+
+.sidebarIcons ul{
+  padding-bottom: 20px;
+
+}
   .logo a {
     color: rgb(0, 0, 0);
     display: flex;
@@ -1070,8 +1046,9 @@ ul li.active {
     font-size: 14px;
   }
 
-  #myCheckbox1, myCheckbox2, myCheckbox3, myCheckbox4{
+  #myCheckbox1, #myCheckbox2, #myCheckbox3, #myCheckbox4{
     cursor: pointer;
+
   }
 
   .filterImg {
@@ -1092,15 +1069,26 @@ ul li.active {
     height: 20px;
   }
 
+  #paginationList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 5px 0px 50px;
+    padding-bottom: 25px;
+  }
+
   .btn1 {
     font-size: 14px;
-    padding: 8px 12px;
-    margin: 5px;
+    padding: 10px 14px;
+    margin-right: 20px;
+    margin-bottom: 25px;
   }
+
   .service {
     height: 120px;
     padding: 2rem;
-    margin-left: 7rem;
+    margin-left: 3em;
   }
 
   .service h2 {
